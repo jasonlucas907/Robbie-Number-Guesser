@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Number Guesser</title>
+    <link rel="stylesheet-normalize" href=".git/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+
+    <header class='site-header' id='site-header'>
+      <audio autoplay loop>
+        <source src="assests/08 The Rat Cage.m4a">
+      </audio>
+      <h1 class='number'>Number </h1>
+      <h1 class='guesser'> Guesser</h1>
+    <header>
+
+    <main>
+      <section class='main-container' id='the-main-container'>
+        <!-- <section class='the-rules-box'>
+          <video class='rules-video' poster="assests/winner.m4v" id="intro-vid" playsinline autoplay>
+            <source src="assests/winner.m4v" type="video/webm">
+            <source src="assests/winner.m4v" type="video/mp4">
+        </section> -->
+        <section class='intro-container'>
+          <input class='low-number guess-fields' id='the-low-number' type='number' name='theGuess' placeholder='Enter low number above 0'>
+          <input class='high-number guess-fields' id='the-high-number' type='number' name='theGuess' placeholder='Enter high number up to 100'>
+          <button class='play-button' id='the-play-button' type='button' >PLAY</button>
+          <video class='intro-video' poster="assests/number-guesser-intro.m4v" id="intro-vid" playsinline autoplay loop>
+            <source src="assests/number-guesser-intro.m4v" type="video/webm">
+            <source src="assests/number-guesser-intro.m4v" type="video/mp4">
+          </video>
+        </section>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

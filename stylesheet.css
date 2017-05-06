@@ -1,0 +1,463 @@
+/***************************************
+general
+****************************************/
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a   {
+  text-decoration: none;
+}
+
+/***************************************
+body
+****************************************/
+
+/***************************************
+header
+****************************************/
+
+.site-header  {
+  width: 100%;
+  height: 100px;
+  background: #404041;
+  text-align: center;
+  line-height: 100px;
+}
+
+.number {
+  font-size: 64px;
+  font-weight: 700;
+  color: #ED458B;
+  display: inline;
+}
+
+.guesser  {
+  font-size: 64px;
+  font-weight: 300;
+  color: #E6E7E8;
+  display: inline;
+}
+
+h1  {
+  display: inline;
+}
+
+/***************************************
+main
+****************************************/
+
+/***************************************
+object the rules box
+this runs if the user enters invalid
+****************************************/
+
+.the-rules-box  {
+  width: 700px;
+  height: 700px;
+  z-index: 100;
+  margin: auto;
+}
+
+.rules-video  {
+  width: 400px;
+  height: auto;
+  position: relative;
+  top: -450px;
+  border: solid 6px;
+  border-color: #404041;
+  z-index: 100;
+  margin: auto;
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+
+/**this is addClass in Jquery***/
+.intro-video-exit {
+  animation-duration: 5s;
+  animation-name: slideout;
+}
+
+/***************************************
+section intro container
+this is the main page on start
+****************************************/
+
+.intro-container  {
+  width: 700px;
+  height: 700px;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+.intro-video  {
+  position: relative;
+  top: -100px;
+  left: 0;
+  z-index: 1;
+  margin: auto;
+  width: 700px;
+  height: 700px;
+  border: solid 6px;
+  border-color: #404041;
+}
+
+.low-number {
+  position: relative;
+  top: 526px;
+  left: 70px;
+  width: 200px;
+  height: 50px;
+  border: solid 2px;
+  font-size: 13px;
+  font-weight: 300;
+  color: #404041;
+  z-index: 10;
+  text-align: center;
+}
+
+.high-number  {
+  position: relative;
+  top: 526px;
+  left: 130px;
+  width: 200px;
+  height: 50px;
+  border: solid 2px;
+  font-size: 13px;
+  font-weight: 300;
+  color: #404041;
+  z-index: 10;
+  text-align: center;
+}
+
+.play-button {
+  position: relative;
+  top: 600px;
+  left: -200px;
+  width: 200px;
+  height: 50px;
+  font-size: 32px;
+  font-weight: 300;
+  text-align: center;
+  color: #FFF;
+  background: #929497;
+  border: solid 1px;
+  border-color: #404041;
+  border-radius: 50px;
+  z-index: 10;
+}
+
+/***************************************
+section guess input container
+this is the main page once play button is clicked
+****************************************/
+
+.guess-input-container  {
+  width: 100%
+}
+
+.guess-input  {
+  width: 510px;
+  height: 50px;
+  border: solid 2px;
+  font-size: 32px;
+  font-weight: 300;
+  color: #D0D2D3;
+  margin-top: 30px;
+}
+
+.guess-button {
+  width: 230px;
+  height: 50px;
+  font-size: 32px;
+  font-weight: 300;
+  text-align: center;
+  color: #FFF;
+  background: #929497;
+  border: none;
+  border-radius: 50px;
+}
+
+.clear-button {
+  width: 230px;
+  height: 50px;
+  font-size: 32px;
+  font-weight: 300;
+  text-align: center;
+  color: #FFF;
+  background: #929497;
+  border: none;
+  border-radius: 50px;
+  margin-left: 50px;
+}
+
+/***************************************
+section result container
+****************************************/
+
+.result-container {
+  width: 820px;
+  height: 400px;
+  margin: auto;
+}
+
+/*******  div last guess box *********/
+
+.last-guess-box {
+  width: 410px;
+  height: 400px;
+  background: #FFF;
+  margin: 0 0 0 0;
+  float: left;
+}
+
+.last-guess-title {
+  font-size: 32px;
+  color: #404041;
+  font-weight: 300;
+  margin: 0 0 36px 0;
+}
+
+.last-guess-number  {
+  font-size: 250px;
+  color: #EB008B;
+  font-weight: 300;
+  margin: 0 0 36px 0;
+}
+
+.last-guess-hint  {
+  font-size: 32px;
+  color: #404041;
+  font-weight: 300;
+  margin: 0 0 0 0;
+}
+
+/*******  div guess video box *********/
+
+.guess-video-box  {
+  width: 410px;
+  height: 400px;
+  background: #FFF;
+  margin: 0 0 0 0;
+  float: right;
+  overflow: hidden;
+}
+
+.hint-video {
+  width: 300px;
+  margin: 40px 0 0 7px;
+  border: solid 4px;
+  border-color: #D0D2D3;
+}
+
+/*******  div reset container *********/
+
+.reset-button {
+  width: 520px;
+  height: 50px;
+  font-size: 32px;
+  font-weight: 300;
+  text-align: center;
+  color: #FFF;
+  background: #929497;
+  border: none;
+  border-radius: 50px;
+}
+
+/***************************************
+pseudo states
+****************************************/
+
+button:hover  {
+  background-color: #EB008B;
+  }
+
+button:active {
+  outline: none;
+  border: none;
+  }
+
+button:focus  {
+  outline: none;
+  outline: 0;
+}
+
+button  {
+  border-style: none;
+  }
+
+input:focus {
+  outline: none;
+  /*transform: scale(1.5);*/
+}
+
+.guess-fields:hover {
+    transform: scale(1.5);
+}
+
+button:disabled {
+  background-color: #D0D2D3;
+}
+
+/***************************************
+media query 780 not complete
+****************************************/
+
+@media screen and (max-width: 780px) {
+
+/*******  the rules video *********/
+
+.the-rules-box  {
+  width: 320px;
+}
+
+.rules-video  {
+  width: 200px;
+}
+
+/*******  the main page *********/
+
+.number {
+  font-size: 20px;
+}
+
+.guesser  {
+  font-size: 20px;
+}
+
+.site-header  {
+  height: 50px;
+  line-height: 50px;
+}
+
+.intro-video  {
+  width: 320px;
+  height: auto;
+  margin-top: 0px;
+  top: -52px;
+}
+
+.intro-container  {
+  width: 320px;
+  height: 100vh;
+}
+
+.low-number {
+  left: 0px;
+  top: 0px;
+  width: 320px;
+  margin-top: 10px;
+}
+
+.high-number  {
+  left: 0px;
+  top: 0px;
+  width: 320px;
+}
+
+.play-button  {
+  position: relative;
+  left: 0px;
+  top: 329px;
+  width: 320px;
+  border-radius: 0px;
+}
+
+.guess-fields:hover {
+    transform: scale(1);
+}
+
+
+/*******  the game page *********/
+
+.guess-input  {
+    width: 320px;
+    margin-top: 1px;
+}
+
+.guess-button {
+  width: 150px;
+  display: inline;
+  border-radius: 0px;
+}
+
+.clear-button {
+  width: 150px;
+  display: inline;
+  margin-left: 0px;
+  border-radius: 0px;
+}
+.result-container {
+  width: 320px;
+  height: auto;
+}
+
+.guess-input-container  {
+  width: 320px;
+  margin: auto;
+}
+
+.last-guess-box {
+  width: 320px;
+  background: #FFF;
+  margin: 230px 0 0 0;
+  opacity: .8;
+  height: auto;
+}
+
+.last-guess-title {
+  font-size: 15px;
+  margin: -14px 0 -11px 0;
+}
+
+.last-guess-number  {
+  font-size: 40px;
+  margin: 0 0 -14px 0;
+}
+
+.last-guess-hint  {
+  font-size: 15px;
+}
+
+.guess-video-box  {
+  width: 320px;
+  z-index: -100;
+  position: absolute;
+}
+
+.hint-video {
+  margin: 0;
+  width: 320px;
+}
+
+.reset-button {
+  width: 320px;
+  border-radius: 0px;
+}
+
+}
+
+/********animation keyframes*******/
+@keyframes slidein {
+  from {
+    margin-top: 100%;
+  }
+
+  to {
+    margin-top: 0%;
+  }
+}
+
+@keyframes slideout {
+  from {
+    margin-top: 0%;
+  }
+
+  to {
+    margin-top: 1000%;
+  }
+}

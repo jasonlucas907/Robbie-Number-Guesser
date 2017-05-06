@@ -37,7 +37,6 @@ $('.main-container').on('click', '.guess-button', function () {
   disableGuessButton();
   disableClearButton();
   defaultGuessInput();
-  console.log($('.main-container').children().children());
 })
 
 // // on return key guess button submission run guess number against random number
@@ -170,26 +169,101 @@ function guessEvaluation() {
   $('.last-guess-number').text('NO');
   $('.last-guess-title').text('WTF Pay Attention!');
   theRules2();
-} else if(guessValue > randomNumber && guessValue > 50) {
+} else if(guessValue > randomNumber && guessValue >=1 && guessValue < 10) {
   $('.last-guess-hint').text('That is too high!');
   $('.last-guess-number').text(guessValue);
-  $('.last-guess-title').text('Your last guess was');  
-  yesterday();
-} else if(guessValue > randomNumber && guessValue <= 50) {
+  $('.last-guess-title').text('Your last guess was');
+  body();
+} else if(guessValue > randomNumber && guessValue >=10 && guessValue < 20) {
   $('.last-guess-hint').text('That is too high!');
   $('.last-guess-number').text(guessValue);
   $('.last-guess-title').text('Your last guess was');
   moron();
-} else if(guessValue < randomNumber && guessValue > 50) {
+} else if(guessValue > randomNumber && guessValue >=20 && guessValue < 30) {
+  $('.last-guess-hint').text('That is too high!');
+  $('.last-guess-number').text(guessValue);
+  $('.last-guess-title').text('Your last guess was');
+  pathetic();
+} else if(guessValue > randomNumber && guessValue >=40 && guessValue < 50) {
+  $('.last-guess-hint').text('That is too high!');
+  $('.last-guess-number').text(guessValue);
+  $('.last-guess-title').text('Your last guess was');
+  vanHalen();
+} else if(guessValue > randomNumber && guessValue >=50 && guessValue < 60) {
+  $('.last-guess-hint').text('That is too high!');
+  $('.last-guess-number').text(guessValue);
+  $('.last-guess-title').text('Your last guess was');
+  yesterday();
+} else if(guessValue > randomNumber && guessValue >=60 && guessValue < 70) {
+  $('.last-guess-hint').text('That is too high!');
+  $('.last-guess-number').text(guessValue);
+  $('.last-guess-title').text('Your last guess was');
+  body();
+} else if(guessValue > randomNumber && guessValue >=70 && guessValue < 80) {
+  $('.last-guess-hint').text('That is too high!');
+  $('.last-guess-number').text(guessValue);
+  $('.last-guess-title').text('Your last guess was');
+  moron();
+} else if(guessValue > randomNumber && guessValue >=80 && guessValue < 90) {
+  $('.last-guess-hint').text('That is too high!');
+  $('.last-guess-number').text(guessValue);
+  $('.last-guess-title').text('Your last guess was');
+  pathetic();
+} else if(guessValue > randomNumber && guessValue >=90 && guessValue <= 100) {
+  $('.last-guess-hint').text('That is too high!');
+  $('.last-guess-number').text(guessValue);
+  $('.last-guess-title').text('Your last guess was');
+  vanHalen();
+} else if(guessValue < randomNumber && guessValue <= 99 && guessValue > 90) {
+  $('.last-guess-hint').text('That is too low!');
+  $('.last-guess-number').text(guessValue);
+  $('.last-guess-title').text('Your last guess was');
+  yesterday();
+} else if(guessValue < randomNumber && guessValue <= 90 && guessValue > 80) {
+  $('.last-guess-hint').text('That is too low!');
+  $('.last-guess-number').text(guessValue);
+  $('.last-guess-title').text('Your last guess was');
+  body();
+} else if(guessValue < randomNumber && guessValue <= 80 && guessValue > 70) {
+  $('.last-guess-hint').text('That is too low!');
+  $('.last-guess-number').text(guessValue);
+  $('.last-guess-title').text('Your last guess was');
+  moron();
+} else if(guessValue < randomNumber && guessValue <= 70 && guessValue > 60) {
   $('.last-guess-hint').text('That is too low!');
   $('.last-guess-number').text(guessValue);
   $('.last-guess-title').text('Your last guess was');
   pathetic();
-} else if(guessValue < randomNumber && guessValue <= 50) {
+} else if(guessValue < randomNumber && guessValue <= 60 && guessValue > 50) {
   $('.last-guess-hint').text('That is too low!');
   $('.last-guess-number').text(guessValue);
   $('.last-guess-title').text('Your last guess was');
   vanHalen();
+} else if(guessValue < randomNumber && guessValue <= 50 && guessValue > 40) {
+  $('.last-guess-hint').text('That is too low!');
+  $('.last-guess-number').text(guessValue);
+  $('.last-guess-title').text('Your last guess was');
+  body();
+} else if(guessValue < randomNumber && guessValue <= 40 && guessValue > 30) {
+  $('.last-guess-hint').text('That is too low!');
+  $('.last-guess-number').text(guessValue);
+  $('.last-guess-title').text('Your last guess was');
+  moron();
+} else if(guessValue < randomNumber && guessValue <= 30 && guessValue > 20) {
+  $('.last-guess-hint').text('That is too low!');
+  $('.last-guess-number').text(guessValue);
+  $('.last-guess-title').text('Your last guess was');
+  yesterday();
+} else if(guessValue < randomNumber && guessValue <= 20 && guessValue > 10) {
+  $('.last-guess-hint').text('That is too low!');
+  $('.last-guess-number').text(guessValue);
+  $('.last-guess-title').text('Your last guess was');
+  vanHalen();
+} else if(guessValue < randomNumber && guessValue <= 10 && guessValue > 0) {
+  $('.last-guess-hint').text('That is too low!');
+  $('.last-guess-number').text(guessValue);
+  $('.last-guess-title').text('Your last guess was');
+  pathetic();
 } else {
   $('.last-guess-hint').text('BOOM');
   $('.last-guess-number').text('YEP');
@@ -311,7 +385,7 @@ $('#the-guess-button').prop('disabled', false);
 //*************** robbie response videos functions   *******************************
 
 
-// robbie response video for win
+// robbie response video
 function winner() {
 $('.hint-video-container').remove();
 $('.guess-video-box').append(`
@@ -335,7 +409,7 @@ $('.hint-video-container').delay(8000).fadeOut(0, function() {
 })
 }
 
-// robbie response video for above range
+// robbie response video
 function yesterday() {
 $('.hint-video-container').remove();
 $('.guess-video-box').append(`
@@ -359,7 +433,7 @@ $('.hint-video-container').delay(6000).fadeOut(0, function() {
 })
 }
 
-// Van Halen response video for below range
+// Van Halen response video
 function vanHalen() {
 $('.hint-video-container').remove();
 $('.guess-video-box').append(`
@@ -383,7 +457,7 @@ $('.hint-video-container').delay(6000).fadeOut(0, function() {
 })
 }
 
-// pathetic response video for too low
+// pathetic response video
 function pathetic() {
 $('.hint-video-container').remove();
 $('.guess-video-box').append(`
@@ -407,7 +481,7 @@ $('.hint-video-container').delay(6000).fadeOut(0, function() {
 })
 }
 
-// moron response video for too high
+// moron response video
 function moron() {
 $('.hint-video-container').remove();
 $('.guess-video-box').append(`
@@ -415,6 +489,30 @@ $('.guess-video-box').append(`
     <video class='hint-video' poster="assests/moron.m4v" id="bgvid" playsinline autoplay>
       <source src="assests/moron.m4v" type="video/webm">
       <source src="assests/moron.m4v" type="video/mp4">
+    </video>
+  <div>`);
+$('.hint-video-container').delay(6000).fadeOut(0, function() {
+  $('.hint-video-container').remove();
+  $('.guess-video-box').delay(0).fadeIn(0, function() {
+    $('.guess-video-box').append(`
+      <div class='hint-video-container'>
+        <video class='hint-video' poster="assests/backdrop.m4v" id="bgvid" playsinline autoplay loop>
+          <source src="assests/backdrop.m4v" type="video/webm">
+          <source src="assests/backdrop.m4v" type="video/mp4">
+        </video>
+      <div>`);
+  })
+})
+}
+
+// body response video
+function body() {
+$('.hint-video-container').remove();
+$('.guess-video-box').append(`
+  <div class='hint-video-container'>
+    <video class='hint-video' poster="assests/body.m4v" id="bgvid" playsinline autoplay>
+      <source src="assests/body.m4v" type="video/webm">
+      <source src="assests/body.m4v" type="video/mp4">
     </video>
   <div>`);
 $('.hint-video-container').delay(6000).fadeOut(0, function() {

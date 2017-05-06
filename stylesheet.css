@@ -51,26 +51,26 @@ main
 ****************************************/
 
 /***************************************
-object the rules box
+object - the rules box
 this runs if the user enters invalid
 ****************************************/
 
 .the-rules-box  {
   width: 700px;
   height: 700px;
-  z-index: 100;
   margin: auto;
+  z-index: 100;
 }
 
 .rules-video  {
   width: 400px;
   height: auto;
+  margin: auto;
   position: relative;
   top: -450px;
   border: solid 6px;
   border-color: #404041;
   z-index: 100;
-  margin: auto;
   animation-duration: 1s;
   animation-name: slidein;
 }
@@ -95,56 +95,56 @@ this is the main page on start
 
 
 .intro-video  {
+  width: 700px;
+  height: 700px;
+  margin: auto;
   position: relative;
   top: -100px;
   left: 0;
   z-index: 1;
-  margin: auto;
-  width: 700px;
-  height: 700px;
   border: solid 6px;
   border-color: #404041;
 }
 
 .low-number {
+  width: 200px;
+  height: 50px;
+  font-size: 13px;
+  font-weight: 300;
+  color: #404041;
+  text-align: center;
   position: relative;
   top: 526px;
   left: 70px;
-  width: 200px;
-  height: 50px;
   border: solid 2px;
-  font-size: 13px;
-  font-weight: 300;
-  color: #404041;
   z-index: 10;
-  text-align: center;
 }
 
 .high-number  {
-  position: relative;
-  top: 526px;
-  left: 130px;
   width: 200px;
   height: 50px;
-  border: solid 2px;
   font-size: 13px;
   font-weight: 300;
   color: #404041;
-  z-index: 10;
   text-align: center;
+  position: relative;
+  top: 526px;
+  left: 130px;
+  border: solid 2px;
+  z-index: 10;
 }
 
 .play-button {
-  position: relative;
-  top: 600px;
-  left: -200px;
   width: 200px;
   height: 50px;
   font-size: 32px;
   font-weight: 300;
-  text-align: center;
   color: #FFF;
   background: #929497;
+  text-align: center;
+  position: relative;
+  top: 600px;
+  left: -200px;
   border: solid 1px;
   border-color: #404041;
   border-radius: 50px;
@@ -163,11 +163,11 @@ this is the main page once play button is clicked
 .guess-input  {
   width: 510px;
   height: 50px;
-  border: solid 2px;
   font-size: 32px;
   font-weight: 300;
   color: #D0D2D3;
   margin-top: 30px;
+  border: solid 2px;
 }
 
 .guess-button {
@@ -175,9 +175,9 @@ this is the main page once play button is clicked
   height: 50px;
   font-size: 32px;
   font-weight: 300;
-  text-align: center;
   color: #FFF;
   background: #929497;
+  text-align: center;
   border: none;
   border-radius: 50px;
 }
@@ -187,12 +187,12 @@ this is the main page once play button is clicked
   height: 50px;
   font-size: 32px;
   font-weight: 300;
-  text-align: center;
   color: #FFF;
   background: #929497;
+  text-align: center;
+  margin-left: 50px;
   border: none;
   border-radius: 50px;
-  margin-left: 50px;
 }
 
 /***************************************
@@ -211,8 +211,8 @@ section result container
   width: 410px;
   height: 400px;
   background: #FFF;
-  margin: 0 0 0 0;
   float: left;
+  margin: 0 0 0 0;
 }
 
 .last-guess-title {
@@ -292,7 +292,6 @@ button  {
 
 input:focus {
   outline: none;
-  /*transform: scale(1.5);*/
 }
 
 .guess-fields:hover {
@@ -442,6 +441,7 @@ media query 780 not complete
 }
 
 /********animation keyframes*******/
+
 @keyframes slidein {
   from {
     margin-top: 100%;

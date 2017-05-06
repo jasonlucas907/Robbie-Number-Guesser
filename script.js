@@ -82,7 +82,7 @@ function theRules() {
       <source src="assests/wrong-input.m4v" type="video/webm">
       <source src="assests/wrong-input.m4v" type="video/mp4">
   </section>`);
-  $('.the-rules-box').delay(10000).fadeOut(1000, function(){
+  $('.the-rules-box').delay(7000).fadeOut(1000, function(){
   $('.the-rules-box').remove();
     });
   $('.rules-video').delay(6000).fadeIn(1000, function(){

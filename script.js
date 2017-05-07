@@ -515,7 +515,7 @@ $('.guess-video-box').append(`
       <source src="assests/body.m4v" type="video/mp4">
     </video>
   <div>`);
-$('.hint-video-container').delay(6000).fadeOut(0, function() {
+$('.hint-video-container').delay(9000).fadeOut(0, function() {
   $('.hint-video-container').remove();
   $('.guess-video-box').delay(0).fadeIn(0, function() {
     $('.guess-video-box').append(`

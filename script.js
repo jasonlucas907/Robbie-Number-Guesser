@@ -1,10 +1,6 @@
 
 
 //******************   Global VARS   ***************************
-//
-// var randomNumber;
-// var lowNumber;
-// var highNumber;
 
 
 //*****************  Event Listeners *************************
@@ -49,7 +45,7 @@ $('.main-container').on('click','.reset-button', function() {
 //*************** Functions   *******************************
 
 
-// evaluates the users entries for valid 1-100
+// evaluates the users high & low entries for valid 1-100
 function guessButtonEval()  {
   lowNumber = parseInt($('.low-number').val());
   highNumber = parseInt($('.high-number').val());
@@ -66,7 +62,7 @@ function guessButtonEval()  {
 }
 
 
-// Displays the rules video for the input high/low fields if invalid
+// Displays the pop-up rules video for the input high/low fields if invalid
 function theRules() {
   $('.intro-video').prop('muted', true);
   $(".main-container").append(`<section class='the-rules-box'>
@@ -86,7 +82,7 @@ function theRules() {
 }
 
 
-// creates a random number based on the users low and high
+// creates a random number based on the users low and high input range
 function randomNumberCreator() {
   lowNumber = parseInt($('.low-number').val());
   highNumber = parseInt($('.high-number').val());
@@ -94,7 +90,8 @@ function randomNumberCreator() {
   console.log(randomNumber);
 }
 
-// creates a random number +10 higher based on the users low and high
+
+// creates a random number +10 higher based on the users low and high range
 function randomNumberCreatorPLusTen() {
   lowNumber = parseInt($('.low-number').val());
   highNumber = parseInt($('.high-number').val())+10;
@@ -104,7 +101,8 @@ function randomNumberCreatorPLusTen() {
   $('.high-number').val(highNumber);
 }
 
-// hides the intro page and switches to the guess page
+
+// hides the intro page and switches to the game page
 function playGame() {
 $('.intro-container').delay(1000).fadeOut(2000);
 $('.intro-video').prop('muted', true);
@@ -137,7 +135,7 @@ $(".main-container").append(`
 
 
 // evaluate user guess against random number/ disable guess and clear button/
-// reset input field
+// reset guess input field/ runs robbie responses/ displays written hints
 function guessEvaluation() {
   var guessValue = parseInt($('.guess-input').val());
   if(guessValue < lowNumber) {
@@ -171,17 +169,10 @@ function guessEvaluation() {
   defaultGuessInput();
   disableClearButton();
   disableGuessButton();
-
+  // autoResetGame();
 }
 }
 
-function resetGuessHint() {
-  $('.main-container').fadeIn(1, function(){
-  $('.last-guess-hint').text('Make a guess');
-  $('.last-guess-number').text('?');
-  $('.last-guess-title').text('Your last guess was');
-  });
-}
 
 // generates a random video response to guess
 function randomResponse() {
@@ -189,104 +180,6 @@ function randomResponse() {
   var RobbieRandomResponse = robbieResponses[Math.floor(Math.random()*robbieResponses.length)]
   RobbieRandomResponse();
 }
-
-// reset the game to intro page
-function resetGame() {
-$('.guess-input-container').fadeOut(1000, function(){
-$('.guess-input-container').remove();
-  });
-$('.result-container').fadeOut(1000, function(){
-$('.result-container').remove();
-  });
-$('.reset-container').fadeOut(1000, function(){
-$('.reset-container').remove();
-  });
-$('.intro-container').delay(1000).fadeIn(1000);
-  $('.intro-video').prop('muted', false);
-}
-
-// Displays the rules video for the guess is out of range
-function outOfRangeVideo() {
-  $(".main-container").append(`<section class='the-rules-box'>
-    <video class='rules-video' poster="assests/out-of-range.m4v" id="intro-vid" playsinline autoplay>
-      <source src="assests/out-of-range.m4v" type="video/webm">
-      <source src="assests/out-of-range.m4v" type="video/mp4">
-  </section>`);
-  $('.the-rules-box').delay(13000).fadeOut(1000, function(){
-  $('.the-rules-box').remove();
-    });
-  $('.rules-video').delay(13000).fadeIn(1000, function(){
-  $('.rules-video').addClass('intro-video-exit');
-    });
-}
-
-// Displays the increase range video for winner
-function theIncreaseVideo() {
-  $('.main-container').delay(7000).fadeIn(1000, function(){
-  $(".main-container").append(`<section class='the-rules-box'>
-    <video class='rules-video' poster="assests/range increase.m4v" id="intro-vid" playsinline autoplay>
-      <source src="assests/range increase.m4v" type="video/webm">
-      <source src="assests/range increase.m4v" type="video/mp4">
-  </section>`);
-});
-  $('.main-container').delay(6000).fadeIn(1000, function(){
-  $('.rules-video').addClass('intro-video-exit');
-    });
-  $('.main-container').delay(4000).fadeIn(1000, function(){
-  $('.the-rules-box').remove();
-    });
-  // resetGuessHint();
-}
-
-// autoreset the game to intro page after winner
-// function autoResetGame() {
-// $('.guess-input-container').delay(10000).fadeOut(1000, function(){
-// $('.guess-input-container').remove();
-//   });
-// $('.result-container').delay(10000).fadeOut(1000, function(){
-// $('.result-container').remove();
-//   });
-// $('.reset-container').delay(10000).fadeOut(1000, function(){
-// $('.reset-container').remove();
-//   });
-// $('.intro-container').delay(10000).fadeIn(1000, function(){
-// $('.reset-container').remove();
-//   $('.intro-video').prop('muted', false);
-//   });
-// }
-
-// clear the guess input field
-function defaultGuessInput() {
-  $('#the-guess-input').val('test')
-}
-
-// clear the high low input
-function defaultHighLowInput() {
-  $('#the-low-number').val('test')
-  $('#the-high-number').val('test')
-}
-
-// disable clear button
-function disableClearButton()  {
-$('#the-clear-button').prop('disabled', true);
-}
-
-// enable clear button
-function enableClearButton()  {
-$('#the-clear-button').prop('disabled', false);
-}
-
-// disable guess button
-function disableGuessButton()  {
-$('#the-guess-button').prop('disabled', true);
-}
-
-// enable guess button
-function enableGuessButton()  {
-$('#the-guess-button').prop('disabled', false);
-}
-
-//*************** robbie response videos var functions   *******************************
 
 
 // robbie winner response video
@@ -313,6 +206,108 @@ $('.hint-video-container').delay(8000).fadeOut(0, function() {
 })
 }
 
+
+// Displays the rules video for the guess is out of range
+function outOfRangeVideo() {
+  $(".main-container").append(`<section class='the-rules-box'>
+    <video class='rules-video' poster="assests/out-of-range.m4v" id="intro-vid" playsinline autoplay>
+      <source src="assests/out-of-range.m4v" type="video/webm">
+      <source src="assests/out-of-range.m4v" type="video/mp4">
+  </section>`);
+  $('.the-rules-box').delay(13000).fadeOut(1000, function(){
+  $('.the-rules-box').remove();
+    });
+  $('.rules-video').delay(13000).fadeIn(1000, function(){
+  $('.rules-video').addClass('intro-video-exit');
+    });
+}
+
+
+// Displays the increase range video for winner
+function theIncreaseVideo() {
+  $('.main-container').delay(7000).fadeIn(1000, function(){
+  $(".main-container").append(`<section class='the-rules-box'>
+    <video class='rules-video' poster="assests/range increase.m4v" id="intro-vid" playsinline autoplay>
+      <source src="assests/range increase.m4v" type="video/webm">
+      <source src="assests/range increase.m4v" type="video/mp4">
+  </section>`);
+});
+  $('.main-container').delay(6000).fadeIn(1000, function(){
+  $('.rules-video').addClass('intro-video-exit');
+    });
+  $('.main-container').delay(4000).fadeIn(1000, function(){
+  $('.the-rules-box').remove();
+    });
+  // resetGuessHint();
+}
+
+
+// reset the game to intro page
+function resetGame() {
+$('.guess-input-container').fadeOut(1000, function(){
+$('.guess-input-container').remove();
+  });
+$('.result-container').fadeOut(1000, function(){
+$('.result-container').remove();
+  });
+$('.reset-container').fadeOut(1000, function(){
+$('.reset-container').remove();
+  });
+$('.intro-container').delay(1000).fadeIn(1000);
+  $('.intro-video').prop('muted', false);
+}
+
+
+// resets the written guess hint responses to default
+function resetGuessHint() {
+  $('.main-container').fadeIn(1, function(){
+  $('.last-guess-hint').text('Make a guess');
+  $('.last-guess-number').text('?');
+  $('.last-guess-title').text('Your last guess was');
+  });
+}
+
+
+// clear the guess input field
+function defaultGuessInput() {
+  $('#the-guess-input').val('test')
+}
+
+
+// clear the high low input
+function defaultHighLowInput() {
+  $('#the-low-number').val('test')
+  $('#the-high-number').val('test')
+}
+
+
+// disable clear button
+function disableClearButton()  {
+$('#the-clear-button').prop('disabled', true);
+}
+
+
+// enable clear button
+function enableClearButton()  {
+$('#the-clear-button').prop('disabled', false);
+}
+
+
+// disable guess button
+function disableGuessButton()  {
+$('#the-guess-button').prop('disabled', true);
+}
+
+
+// enable guess button
+function enableGuessButton()  {
+$('#the-guess-button').prop('disabled', false);
+}
+
+
+//*************** robbie random response videos var functions   *******************************
+
+
 // robbie yesterday response video
 var response1 = function yesterday() {
 $('.hint-video-container').remove();
@@ -336,6 +331,7 @@ $('.hint-video-container').delay(6000).fadeOut(0, function() {
   })
 })
 }
+
 
 // Van Halen response video
 var response2 = function vanHalen() {
@@ -361,6 +357,7 @@ $('.hint-video-container').delay(6000).fadeOut(0, function() {
 })
 }
 
+
 // pathetic response video
 var response3 = function pathetic() {
 $('.hint-video-container').remove();
@@ -385,6 +382,7 @@ $('.hint-video-container').delay(6000).fadeOut(0, function() {
 })
 }
 
+
 // moron response video
 var response4 = function moron() {
 $('.hint-video-container').remove();
@@ -408,6 +406,7 @@ $('.hint-video-container').delay(6000).fadeOut(0, function() {
   })
 })
 }
+
 
 // body response video
 var response5 = function body() {
@@ -464,3 +463,24 @@ $('.hint-video-container').delay(9000).fadeOut(0, function() {
 //     })
 //   })
 // })
+
+
+//*****************  extra code *************************
+
+
+// autoreset the game to intro page after winner
+// function autoResetGame() {
+// $('.guess-input-container').delay(10000).fadeOut(1000, function(){
+// $('.guess-input-container').remove();
+//   });
+// $('.result-container').delay(10000).fadeOut(1000, function(){
+// $('.result-container').remove();
+//   });
+// $('.reset-container').delay(10000).fadeOut(1000, function(){
+// $('.reset-container').remove();
+//   });
+// $('.intro-container').delay(10000).fadeIn(1000, function(){
+// $('.reset-container').remove();
+//   $('.intro-video').prop('muted', false);
+//   });
+// }

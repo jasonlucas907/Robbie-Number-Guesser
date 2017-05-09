@@ -166,18 +166,21 @@ function guessEvaluation() {
   $('.last-guess-title').text('OH SHIT!');
   winner();
   theIncreaseVideo();;
+  resetGuessHint();
   randomNumberCreatorPLusTen();
   defaultGuessInput();
   disableClearButton();
   disableGuessButton();
-  resetGuessHint();
+
 }
 }
 
 function resetGuessHint() {
+  $('.main-container').fadeIn(1, function(){
   $('.last-guess-hint').text('Make a guess');
   $('.last-guess-number').text('?');
   $('.last-guess-title').text('Your last guess was');
+  });
 }
 
 // generates a random video response to guess
@@ -232,6 +235,7 @@ function theIncreaseVideo() {
   $('.main-container').delay(4000).fadeIn(1000, function(){
   $('.the-rules-box').remove();
     });
+  // resetGuessHint();
 }
 
 // autoreset the game to intro page after winner

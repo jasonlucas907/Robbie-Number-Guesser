@@ -50,7 +50,7 @@ function guessButtonEval()  {
   lowNumber = parseInt($('.low-number').val());
   highNumber = parseInt($('.high-number').val());
   console.log(lowNumber, highNumber)
-  if(lowNumber > 0 && highNumber <= 100 && lowNumber < 100 && lowNumber < highNumbercd tur) {
+  if(lowNumber > 0 && highNumber <= 100 && lowNumber < 100 && lowNumber < highNumber) {
     randomNumberCreator();
     playGame();
     disableGuessButton();

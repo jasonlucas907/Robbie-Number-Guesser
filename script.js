@@ -139,38 +139,43 @@ $(".main-container").append(`
 function guessEvaluation() {
   var guessValue = parseInt($('.guess-input').val());
   if(guessValue < lowNumber) {
-  $('.last-guess-hint').text('Out of Range');
-  $('.last-guess-number').text('NO');
-  $('.last-guess-title').text('WTF Pay Attention!');
-  outOfRangeVideo();
-} else if(guessValue > highNumber) {
-  $('.last-guess-hint').text('Out of Range');
-  $('.last-guess-number').text('NO');
-  $('.last-guess-title').text('WTF Pay Attention!');
-  outOfRangeVideo();
-} else if(guessValue > randomNumber) {
-  $('.last-guess-hint').text('That is too high!');
-  $('.last-guess-number').text(guessValue);
-  $('.last-guess-title').text('Your last guess was');
-  randomResponse();
-} else if(guessValue < randomNumber) {
-  $('.last-guess-hint').text('That is too low!');
-  $('.last-guess-number').text(guessValue);
-  $('.last-guess-title').text('Your last guess was');
-  randomResponse();
-} else {
-  $('.last-guess-hint').text('BOOM');
-  $('.last-guess-number').text('YEP');
-  $('.last-guess-title').text('OH SHIT!');
-  winner();
-  theIncreaseVideo();;
-  resetGuessHint();
-  randomNumberCreatorPLusTen();
-  defaultGuessInput();
-  disableClearButton();
-  disableGuessButton();
-  // autoResetGame();
-}
+    $('.last-guess-hint').text('Out of Range');
+    $('.last-guess-number').text('NO');
+    $('.last-guess-title').text('WTF Pay Attention!');
+    outOfRangeVideo();
+  } else if(guessValue > highNumber) {
+    $('.last-guess-hint').text('Out of Range');
+    $('.last-guess-number').text('NO');
+    $('.last-guess-title').text('WTF Pay Attention!');
+    outOfRangeVideo();
+  } else if(guessValue === NaN) {
+    $('.last-guess-hint').text('Out of Range');
+    $('.last-guess-number').text('NO');
+    $('.last-guess-title').text('WTF Pay Attention!');
+    outOfRangeVideo();
+  } else if(guessValue > randomNumber) {
+    $('.last-guess-hint').text('That is too high!');
+    $('.last-guess-number').text(guessValue);
+    $('.last-guess-title').text('Your last guess was');
+    randomResponse();
+  } else if(guessValue < randomNumber) {
+    $('.last-guess-hint').text('That is too low!');
+    $('.last-guess-number').text(guessValue);
+    $('.last-guess-title').text('Your last guess was');
+    randomResponse();
+  } else {
+    $('.last-guess-hint').text('BOOM');
+    $('.last-guess-number').text('YEP');
+    $('.last-guess-title').text('OH SHIT!');
+    winner();
+    theIncreaseVideo();;
+    resetGuessHint();
+    randomNumberCreatorPLusTen();
+    defaultGuessInput();
+    disableClearButton();
+    disableGuessButton();
+    // autoResetGame();
+  }
 }
 
 

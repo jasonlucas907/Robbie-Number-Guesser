@@ -274,7 +274,7 @@ pseudo states
 
 button:hover  {
   background-color: #EB008B;
-  }
+}
 
 button:active {
   outline: none;
@@ -295,7 +295,7 @@ input:focus {
 }
 
 .guess-fields:hover {
-    transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 button:disabled {
